@@ -39,7 +39,7 @@ public abstract class MesaVisual extends JFrame implements JogoListener {
         // local do jogador norte
         areaNorte = new JPanel();
         JScrollPane scrollNorte = new JScrollPane(areaNorte);
-        scrollNorte.setBorder(null);
+
         areaNorte.setBackground(Color.darkGray);
         areaNorte.setPreferredSize(new Dimension(1000, 200));
         this.add(scrollNorte, BorderLayout.NORTH);
@@ -49,7 +49,7 @@ public abstract class MesaVisual extends JFrame implements JogoListener {
         // local do jogador sul
         areaSul = new JPanel();
         JScrollPane scrollSul = new JScrollPane(areaSul);
-        scrollSul.setBorder(null);
+
         areaSul.setBackground(Color.darkGray);
         areaSul.setPreferredSize(new Dimension(1000, 200));
         this.add(scrollSul, BorderLayout.SOUTH);
@@ -59,7 +59,7 @@ public abstract class MesaVisual extends JFrame implements JogoListener {
         // local do jogador leste
         areaLeste = new JPanel();
         JScrollPane scrollLeste = new JScrollPane(areaLeste);
-        scrollLeste.setBorder(null);
+
         areaLeste.setBackground(Color.darkGray);
         areaLeste.setPreferredSize(new Dimension(200, 800));
         this.add(scrollLeste, BorderLayout.EAST);
@@ -69,7 +69,7 @@ public abstract class MesaVisual extends JFrame implements JogoListener {
         // local do jogador oeste
         areaOeste = new JPanel();
         JScrollPane scrollOeste = new JScrollPane(areaOeste);
-        scrollOeste.setBorder(null);
+
         areaOeste.setPreferredSize(new Dimension(200, 800));
         areaOeste.setBackground(Color.darkGray);
         this.add(scrollOeste, BorderLayout.WEST);
