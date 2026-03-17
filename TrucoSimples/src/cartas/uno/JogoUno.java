@@ -5,7 +5,9 @@ import cartas.framework.Jogador;
 import cartas.framework.JogoBase;
 
 public class JogoUno extends JogoBase {
-    Carta cartaNaMesa;
+    // última carta jogada
+    private Carta cartaNaMesa;
+
     public JogoUno(){
         // preenche com 4 jogadores
         super();
@@ -47,4 +49,9 @@ public class JogoUno extends JogoBase {
     public void jogarCarta(int jogadorId, int indiceCarta){
 
     }
+
+    public Carta getCartaNaMesa(){
+        return this.cartaNaMesa;
+    }
+
 }

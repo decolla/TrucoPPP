@@ -8,6 +8,15 @@ public abstract class MesaVisual extends JFrame implements JogoListener {
 
     protected JogoBase jogo;
 
+
+    // campo onde as cartas são jogadas
+    protected JPanel campo;
+    // lugares onde as mãos dos jogadores ficarão
+    protected JPanel areaNorte;
+    protected JPanel areaSul;
+    protected JPanel areaLeste;
+    protected JPanel areaOeste;
+
     public MesaVisual(JogoBase jogo, String titulo){
         // qual jogo foi escolhido
         this.jogo = jogo;
@@ -19,34 +28,53 @@ public abstract class MesaVisual extends JFrame implements JogoListener {
         this.setLayout(new BorderLayout());
 
 
+
         // campo onde as cartas serão jogadas
-        JPanel campo = new JPanel();
+        campo = new JPanel();
         campo.setBackground(new Color(40, 100, 60));
         this.add(campo, BorderLayout.CENTER);
 
+
+
         // local do jogador norte
-        JPanel areaNorte = new JPanel();
+        areaNorte = new JPanel();
+        JScrollPane scrollNorte = new JScrollPane(areaNorte);
+        scrollNorte.setBorder(null);
         areaNorte.setBackground(Color.darkGray);
         areaNorte.setPreferredSize(new Dimension(1000, 200));
-        this.add(areaNorte, BorderLayout.NORTH);
+        this.add(scrollNorte, BorderLayout.NORTH);
+
+
 
         // local do jogador sul
-        JPanel areaSul = new JPanel();
+        areaSul = new JPanel();
+        JScrollPane scrollSul = new JScrollPane(areaSul);
+        scrollSul.setBorder(null);
         areaSul.setBackground(Color.darkGray);
         areaSul.setPreferredSize(new Dimension(1000, 200));
-        this.add(areaSul, BorderLayout.SOUTH);
+        this.add(scrollSul, BorderLayout.SOUTH);
+
+
 
         // local do jogador leste
-        JPanel areaLeste = new JPanel();
-        areaLeste.setPreferredSize(new Dimension(200, 800));
+        areaLeste = new JPanel();
+        JScrollPane scrollLeste = new JScrollPane(areaLeste);
+        scrollLeste.setBorder(null);
         areaLeste.setBackground(Color.darkGray);
-        this.add(areaLeste, BorderLayout.EAST);
+        areaLeste.setPreferredSize(new Dimension(200, 800));
+        this.add(scrollLeste, BorderLayout.EAST);
+
+
 
         // local do jogador oeste
-        JPanel areaOeste = new JPanel();
+        areaOeste = new JPanel();
+        JScrollPane scrollOeste = new JScrollPane(areaOeste);
+        scrollOeste.setBorder(null);
         areaOeste.setPreferredSize(new Dimension(200, 800));
         areaOeste.setBackground(Color.darkGray);
-        this.add(areaOeste, BorderLayout.WEST);
+        this.add(scrollOeste, BorderLayout.WEST);
+
+
 
         // adiciona a instância da classe como listener do jogo
         this.jogo.adicionarListener(this);
